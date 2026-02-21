@@ -189,3 +189,64 @@
     cursor: pointer;
   }
 
+  /* Protocol program groups */
+
+  .js_protocol-list {
+    display: block;
+  }
+
+  .filters__program {
+    list-style-type: none;
+    margin-bottom: 0.75rem;
+  }
+
+  .filters__program-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .filters__program-name {
+    font-size: 16px;
+    font-weight: bold;
+    flex: 1;
+  }
+
+  .filters__program-btns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .filters__program-list {
+    list-style-type: none;
+    padding: 0 0 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.5rem;
+    margin: 0.25rem 0 0.5rem;
+  }
+
+  .filters__program-list--collapsed {
+    display: none;
+  }
+
+  .filters__collapse-btn {
+    background: none;
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 2px 6px;
+    font-size: 12px;
+    line-height: 1;
+  }
+  .filters__collapse-btn:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .filters__btn--sm {
+    margin: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 14px;
+  }
+
