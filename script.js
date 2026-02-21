@@ -126,6 +126,9 @@ let cards = [
         top: "",
         middle: "Delete 1 card from each other line.",
         bottom: "",
+        clarifications: [
+            "When Death 0's middle command triggers, the owner notes the lines that need to be acted in. Then, they choose which line to process, one at a time. For each line, they select an uncovered card to delete, processing the consequences of that delete before addressing the next line."
+        ],
         keywords: {
             delete: true,
         }
@@ -133,7 +136,7 @@ let cards = [
     {
         protocol: "Death",
         value: 1,
-        top: "<div><span class='emphasis'>Start:</span> You may draw 1 card. If you do, delete 1 other card, then delete this card.</div>",
+        top: "<div><span class='emphasis'>Start:</span> You may draw 1 card. If you do, delete 1 other card. Then, delete this card.</div>",
         middle: "",
         bottom: "",
         keywords: {
@@ -186,7 +189,7 @@ let cards = [
         value: 0,
         top: "",
         middle: "Flip 1 other card. Draw 2 cards.",
-        bottom: "<div><span class='emphasis'>When this card would be covered:</span> First, draw 1 card and flip 1 other card.</div>",
+        bottom: "<div><span class='emphasis'>When this card would be covered:</span> First, draw 1 card. Then, flip 1 other card.</div>",
         keywords: {
             draw: true,
             flip: true,
@@ -284,6 +287,9 @@ let cards = [
         top: "",
         middle: "Shift 1 face-down card to this line.",
         bottom: "",
+        clarifications: [
+            "Gravity 2 will still shift the flipped card if it’s covered. “That card” references a specific card that supersedes the covered manipulation rule."
+        ],
         keywords: {
             shift: true,
         }
@@ -333,8 +339,12 @@ let cards = [
         protocol: "Hate",
         value: 2,
         top: "",
-        middle: "Delete your highest value card. Delete your opponent's highest value card.",
+        middle: "Delete your highest value uncovered card. Delete your opponent's highest value uncovered card.",
         bottom: "",
+        clarifications: [
+            "Multiple cards can be tied for the highest value. The player would choose one of the tied cards.",
+            "If Hate 2 is the highest value card you own it deletes itself as a result of the first clause. Thus, the second clause no longer exists and does not trigger."
+        ],
         keywords: {
             delete: true,
         }
@@ -372,9 +382,13 @@ let cards = [
     {
         protocol: "Life",
         value: 0,
-        top: "",
+        top: "<div><span class='emphasis'>End:</span> If this card is covered, delete this card.</div>",
         middle: "Play the top card of your deck face-down in each line where you have a card.",
-        bottom: "<div><span class='emphasis'>When this card would be covered:</span> First, delete this card.</div>",
+        bottom: "",
+        clarifications: [
+            "When Life 0's middle command triggers, the owner notes the lines that need to be acted in. Then, they choose which line to process, one at a time. For each line, they play the top card of their deck face-down, processing the consequences of that card play before addressing the next line. If Life 0 gets covered during this process, its middle command stops.",
+            "Playing cards from the top of a deck does not force a shuffle if that deck is empty."
+        ],
         keywords: {
             delete: true,
             play: true,
@@ -437,6 +451,12 @@ let cards = [
         top: "",
         middle: "Flip 1 card. Draw cards equal to that card's value.",
         bottom: "",
+        clarifications: [
+            "The middle command reads ”Flip 1 card. Draw cards equal to that card’s value.” When played, the card owner chooses one uncovered card, flips that card, and then resolves any triggered text. Then, they draw cards equal to the current value of the chosen card (e.g. Light 0 selects Fire 5. First, Fire 5 is flipped face-down. Then, Light 0 checks the current value of the card, which is now 2. As a result, the active player draws 2 cards.)"
+        ],
+        rulings: [
+            "If the chosen card is removed from play, it is still referred to directly by the ”that card” text on Light 0. (e.g. Light 0 selects Metal 6. First, Metal 6's top command triggers: because it is about to be flipped, it deletes itself. Then, Light 0 checks the value of Metal 6, and, if it’s in the trash, its current value is 6 since all cards in the trash are face-up. The active player draws 6 cards. If the Metal 6 is private information (i.e. it was shuffled into your deck) it has a value of 2.)"
+        ],
         keywords: {
             draw: true,
             flip: true,
@@ -471,6 +491,9 @@ let cards = [
         top: "",
         middle: "Shift all face-down cards in this line to another line.",
         bottom: "",
+        clarifications: [
+            "The face-down cards shifted by Light 3 maintain the same relative positioning in their stacks and are all moved to the same line."
+        ],
         keywords: {
             shift: true,
         }
@@ -573,8 +596,11 @@ let cards = [
         protocol: "Metal",
         value: 1,
         top: "",
-        middle: "Draw 2 cards. Your opponent cannot compile next turn.",
+        middle: "Draw 2 cards. Your opponent cannot compile on their next turn.",
         bottom: "",
+        clarifications: [
+            "Metal 1 prevents your opponent from taking the compile action on their next turn, provided the text is visible. Since a player gets 1 action on their turn (compile, play, or refresh), they must either play or refresh on their next turn since they cannot compile."
+        ],
         keywords: {
             draw: true,
         }
@@ -615,6 +641,10 @@ let cards = [
         top: "<div><span class='emphasis'>When this card would be covered or flipped:</span> First, delete this card.</div>",
         middle: "",
         bottom: "",
+        clarifications: [
+            "When Metal 6 deletes itself because of its top command, if it is covering a card with text that would trigger, that text triggers before the committed card enters the field.",
+            "When Metal 6 deletes itself as a result of being flipped, the “flip” command is used up and cannot be used on another card, nor can it be used on Metal 6 in the trash, as cards in the trash can’t be flipped."
+        ],
         keywords: {
             delete: true,
         }
@@ -654,8 +684,12 @@ let cards = [
         protocol: "Plague",
         value: 3,
         top: "",
-        middle: "Flip each other face-up card.",
+        middle: "Flip each other uncovered face-up card.",
         bottom: "",
+        clarifications: [
+            "The middle command reads “Flip each other face-up card.” This only affects uncovered cards, since it does not say “all”.",
+            "When Plague 3's middle command triggers, the owner notes each uncovered face-up card. Then, they choose which card to process, one at a time. For each card, they flip it and process any consequences before addressing the next card"
+        ],
         keywords: {
             flip: true,
         }
@@ -772,6 +806,9 @@ let cards = [
         top: "<div><span class='emphasis'>When this card would be deleted by compiling:</span> Shift this card, even if this card is covered.</div>",
         middle: "",
         bottom: "",
+        clarifications: [
+            "When compiling, all cards in the line are deleted at the same time. When Speed 2 would be deleted this way, instead, you shift it to another line, preventing the delete of Speed 2 only, and not altering the compile."
+        ],
         keywords: {
             shift: true,
         }
@@ -813,6 +850,9 @@ let cards = [
         top: "",
         middle: "Refresh. Draw 1 card.",
         bottom: "Skip your check cache phase.",
+        clarifications: [
+            "When you refresh as instructed, it is a normal refresh action, including spending the control component, if applicable."
+        ],
         keywords: {
             draw: true,
             refresh: true,
@@ -821,7 +861,7 @@ let cards = [
     {
         protocol: "Spirit",
         value: 1,
-        top: "You can play cards in any line.",
+        top: "When you play cards face-up, they may be played without matching protocols.",
         middle: "Draw 2 cards.",
         bottom: "<div><span class='emphasis'>Start:</span> Either discard 1 card or flip this card.</div>",
         keywords: {
@@ -886,6 +926,10 @@ let cards = [
         top: "",
         middle: "Play the top card of your deck face-down in each other line.",
         bottom: "",
+        clarifications: [
+            "When Water 1's middle command triggers, the owner notes the lines that need to be acted in. Then, they choose which line to process, one at a time. For each line, they play the top card of their deck face-down, processing the consequences of that card play before addressing the next line.",
+            "Playing cards from the top of a deck does not force a shuffle if that deck is empty."
+        ],
         keywords: {
             play: true,
         }
