@@ -975,11 +975,733 @@ let cards = [
             discard: true,
         }
     },
+    {
+        protocol: "Chaos",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Chaos",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Chaos",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Chaos",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Chaos",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Chaos",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Clarity",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Clarity",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Clarity",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Clarity",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Clarity",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Clarity",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Corruption",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Corruption",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Corruption",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Corruption",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Corruption",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Corruption",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Courage",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Courage",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Courage",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Courage",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Courage",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Courage",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Fear",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Fear",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Fear",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Fear",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Fear",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Fear",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Ice",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Ice",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Ice",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Ice",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Ice",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Ice",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Luck",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Luck",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Luck",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Luck",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Luck",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Luck",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Mirror",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Mirror",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Mirror",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Mirror",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Mirror",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Mirror",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Peace",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Peace",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Peace",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Peace",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Peace",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Peace",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Smoke",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Smoke",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Smoke",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Smoke",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Smoke",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Smoke",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Time",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Time",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Time",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Time",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Time",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Time",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "War",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "War",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "War",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "War",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "War",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "War",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Diversity",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Diversity",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Diversity",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Diversity",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Diversity",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Diversity",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Assimilation",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Assimilation",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Assimilation",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Assimilation",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Assimilation",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Assimilation",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Unity",
+        value: 0,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Unity",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Unity",
+        value: 2,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Unity",
+        value: 3,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Unity",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
+    {
+        protocol: "Unity",
+        value: 5,
+        top: "",
+        middle: "",
+        bottom: "",
+        keywords: {}
+    },
 ]
 
 const programs = {
     "Main 1": ["Darkness", "Death", "Fire", "Gravity", "Life", "Light", "Metal", "Plague", "Psychic", "Speed", "Spirit", "Water"],
-    "Aux 1": ["Apathy", "Hate", "Love"]
+    "Aux 1": ["Apathy", "Hate", "Love"],
+    "Main 2": ["Chaos", "Clarity", "Corruption", "Courage", "Fear", "Ice", "Luck", "Mirror", "Peace", "Smoke", "Time", "War"],
+    "Aux 2": ["Diversity", "Assimilation", "Unity"]
 };
 
 initialize();
