@@ -73,6 +73,51 @@
   .card--water {
     background: #0047AB;
   }
+  .card--chaos {
+    background: #744e51;
+  }
+  .card--clarity {
+    background: #8e6d68;
+  }
+  .card--corruption {
+    background: #6b6754;
+  }
+  .card--courage {
+    background: #bd5b50;
+  }
+  .card--fear {
+    background: #b06f5f;
+  }
+  .card--ice {
+    background: #846060;
+  }
+  .card--luck {
+    background: #b37655;
+  }
+  .card--mirror {
+    background: #804746;
+  }
+  .card--peace {
+    background: #877b5a;
+  }
+  .card--smoke {
+    background: #75655a;
+  }
+  .card--time {
+    background: #a96146;
+  }
+  .card--war {
+    background: #9c4121;
+  }
+  .card--diversity {
+    background: #817168;
+  }
+  .card--assimilation {
+    background: #846d71;
+  }
+  .card--unity {
+    background: #996d7c;
+  }
 
   .card__top {
     display: flex;
