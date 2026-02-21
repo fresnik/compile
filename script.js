@@ -933,14 +933,20 @@ let cards = [
     },
 ]
 
+const programs = {
+    "Main 1": ["Darkness", "Death", "Fire", "Gravity", "Life", "Light", "Metal", "Plague", "Psychic", "Speed", "Spirit", "Water"],
+    "Aux 1": ["Apathy", "Hate", "Love"]
+};
+
 initialize();
 
 function initialize() {
+    buildProtocolFilter();
     let array = cards;
     displayCards(array);
 }
 
-$(".js_protocol").click(function() {
+$(document).on('click', '.js_protocol', function() {
     checkFilters();
 })
 $(".js_value").click(function() {
@@ -974,16 +980,65 @@ $(".js_remove-all-keywords").click(function() {
     checkFilters();
 })
 
+$(document).on('click', '.js_collapse-program', function() {
+    const targetId = $(this).data('target');
+    const $list = $('#' + targetId);
+    $list.toggleClass('filters__program-list--collapsed');
+    $(this).html($list.hasClass('filters__program-list--collapsed') ? '&#9654;' : '&#9660;');
+});
+
+$(document).on('click', '.js_select-all-program', function() {
+    $(this).closest('.filters__program').find('.js_protocol').prop('checked', true);
+    checkFilters();
+});
+
+$(document).on('click', '.js_remove-all-program', function() {
+    $(this).closest('.filters__program').find('.js_protocol').prop('checked', false);
+    checkFilters();
+});
+
+function buildProtocolFilter() {
+    const $list = $('.js_protocol-list');
+    $list.empty();
+
+    Object.entries(programs).forEach(([programName, protocols]) => {
+        const programId = programName.toLowerCase().replace(/\s+/g, '-');
+        const listId = `program-list-${programId}`;
+
+        const protocolItems = protocols.map(protocol => {
+            const protocolLower = protocol.toLowerCase();
+            return `
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_protocol js_${protocolLower}" checked type="checkbox" id="${protocolLower}" name="checkbox" value="1" data-protocol="${protocol}">
+                    <label class="filters__label" for="${protocolLower}">${protocol}</label>
+                </li>`;
+        }).join('');
+
+        $list.append(`
+            <li class="filters__program">
+                <div class="filters__program-header">
+                    <button class="filters__collapse-btn js_collapse-program" data-target="${listId}">&#9660;</button>
+                    <span class="filters__program-name">${programName}</span>
+                    <div class="filters__program-btns">
+                        <button class="filters__btn filters__btn--sm js_select-all-program">Select All</button>
+                        <button class="filters__btn filters__btn--sm js_remove-all-program">Remove All</button>
+                    </div>
+                </div>
+                <ul class="filters__program-list" id="${listId}">
+                    ${protocolItems}
+                </ul>
+            </li>`);
+    });
+}
+
 function checkFilters() {
     let array = cards;
-
-    let [apathy, darkness, death, fire, gravity, hate, life, light, love, metal, plague, psychic, speed, spirit, water] = checkProtocols();
 
     let [zero, one, two, three, four, five, six] = checkValue();
 
     let [deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, swap, take] = checkKeywords();
 
-    array = getProtocols(array, apathy, darkness, death, fire, gravity, hate, life, light, love, metal, plague, psychic, speed, spirit, water);
+    array = getProtocols(array);
 
     array = getValue(array, zero, one, two, three, four, five, six);
 
@@ -992,25 +1047,6 @@ function checkFilters() {
     displayCards(array);
 }
 
-function checkProtocols() {
-    let apathy = $('.js_apathy').is(':checked');
-    let darkness = $('.js_darkness').is(':checked');
-    let death = $('.js_death').is(':checked');
-    let fire = $('.js_fire').is(':checked');
-    let gravity = $('.js_gravity').is(':checked');
-    let hate = $('.js_hate').is(':checked');
-    let life = $('.js_life').is(':checked');
-    let light = $('.js_light').is(':checked');
-    let love = $('.js_love').is(':checked');
-    let metal = $('.js_metal').is(':checked');
-    let plague = $('.js_plague').is(':checked');
-    let psychic = $('.js_psychic').is(':checked');
-    let speed = $('.js_speed').is(':checked');
-    let spirit = $('.js_spirit').is(':checked');
-    let water = $('.js_water').is(':checked');
-
-    return [apathy, darkness, death, fire, gravity, hate, life, light, love, metal, plague, psychic, speed, spirit, water];
-};
 
 function checkValue() {
     let zero = $('.js_zero').is(':checked');
@@ -1042,54 +1078,12 @@ function checkKeywords() {
     return [deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, swap, take];
 }
 
-function getProtocols(array, apathy, darkness, death, fire, gravity, hate, life, light, love, metal, plague, psychic, speed, spirit, water) {
-    if (!apathy) {
-        array = array.filter(cards => cards.protocol != "Apathy");
-    }
-    if (!darkness) {
-        array = array.filter(cards => cards.protocol != "Darkness");
-    }
-    if (!death) {
-        array = array.filter(cards => cards.protocol != "Death");
-    }
-    if (!fire) {
-        array = array.filter(cards => cards.protocol != "Fire");
-    }
-    if (!gravity) {
-        array = array.filter(cards => cards.protocol != "Gravity");
-    }
-    if (!hate) {
-        array = array.filter(cards => cards.protocol != "Hate");
-    }
-    if (!life) {
-        array = array.filter(cards => cards.protocol != "Life");
-    }
-    if (!light) {
-        array = array.filter(cards => cards.protocol != "Light");
-    }
-    if (!love) {
-        array = array.filter(cards => cards.protocol != "Love");
-    }
-    if (!metal) {
-        array = array.filter(cards => cards.protocol != "Metal");
-    }
-    if (!plague) {
-        array = array.filter(cards => cards.protocol != "Plague");
-    }
-    if (!psychic) {
-        array = array.filter(cards => cards.protocol != "Psychic");
-    }
-    if (!speed) {
-        array = array.filter(cards => cards.protocol != "Speed");
-    }
-    if (!spirit) {
-        array = array.filter(cards => cards.protocol != "Spirit");
-    }
-    if (!water) {
-        array = array.filter(cards => cards.protocol != "Water");
-    }
-
-    return array;
+function getProtocols(array) {
+    const checked = new Set();
+    $('.js_protocol:checked').each(function() {
+        checked.add($(this).data('protocol'));
+    });
+    return array.filter(card => checked.has(card.protocol));
 }
 
 function getValue(array, zero, one, two, three, four, five, six) {
