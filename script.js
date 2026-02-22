@@ -1132,7 +1132,7 @@ let cards = [
         value: 1,
         top: "",
         middle: "Return 1 card.",
-        bottom: "When a card would be returned to your opponent's hand: Put that card on top of their deck face-down instead.",
+        bottom: "<div><span class='emphasis'>When a card would be returned to your opponent's hand:</span> Put that card on top of their deck face-down instead.</div>",
         keywords: {
             return: true,
         }
@@ -1341,7 +1341,7 @@ let cards = [
     },
     {
         protocol: "Ice",
-        value: 3,
+        value: 4,
         top: "",
         middle: "",
         bottom: "This card cannot be flipped.",
