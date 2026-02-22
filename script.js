@@ -127,7 +127,7 @@ let cards = [
         middle: "Delete 1 card from each other line.",
         bottom: "",
         clarifications: [
-            "When Death 0's middle command triggers, the owner notes the lines that need to be acted in. Then, they choose which line to process, one at a time. For each line, they select an uncovered card to delete, processing the consequences of that delete before addressing the next line."
+            "When Death 0's middle command triggers, the owner notes the lines that need to be acted in. Then, they choose which line to process, one at a time. For each line, they select an uncovered card to delete, processing the consequences of that delete before addressing the next line.",
         ],
         keywords: {
             delete: true,
@@ -277,6 +277,9 @@ let cards = [
         top: "",
         middle: "Flip 1 card. Shift that card to this line.",
         bottom: "",
+        clarifications: [
+            "Gravity 2 will still shift the flipped card if it's covered. \u201cThat card\u201d references a specific card that supersedes the covered manipulation rule.",
+        ],
         keywords: {
             flip: true,
             shift: true,
@@ -288,9 +291,6 @@ let cards = [
         top: "",
         middle: "Shift 1 face-down card to this line.",
         bottom: "",
-        clarifications: [
-            "Gravity 2 will still shift the flipped card if it’s covered. “That card” references a specific card that supersedes the covered manipulation rule."
-        ],
         keywords: {
             shift: true,
         }
@@ -345,7 +345,7 @@ let cards = [
         bottom: "",
         clarifications: [
             "Multiple cards can be tied for the highest value. The player would choose one of the tied cards.",
-            "If Hate 2 is the highest value card you own it deletes itself as a result of the first clause. Thus, the second clause no longer exists and does not trigger."
+            "If Hate 2 is the highest value card you own it deletes itself as a result of the first clause. Thus, the second clause no longer exists and does not trigger.",
         ],
         keywords: {
             delete: true,
@@ -389,7 +389,7 @@ let cards = [
         bottom: "",
         clarifications: [
             "When Life 0's middle command triggers, the owner notes the lines that need to be acted in. Then, they choose which line to process, one at a time. For each line, they play the top card of their deck face-down, processing the consequences of that card play before addressing the next line. If Life 0 gets covered during this process, its middle command stops.",
-            "Playing cards from the top of a deck does not force a shuffle if that deck is empty."
+            "Playing cards from the top of a deck does not force a shuffle if that deck is empty.",
         ],
         keywords: {
             delete: true,
@@ -456,10 +456,10 @@ let cards = [
         middle: "Flip 1 card. Draw cards equal to that card's value.",
         bottom: "",
         clarifications: [
-            "The middle command reads ”Flip 1 card. Draw cards equal to that card’s value.” When played, the card owner chooses one uncovered card, flips that card, and then resolves any triggered text. Then, they draw cards equal to the current value of the chosen card (e.g. Light 0 selects Fire 5. First, Fire 5 is flipped face-down. Then, Light 0 checks the current value of the card, which is now 2. As a result, the active player draws 2 cards.)"
+            "The middle command reads ”Flip 1 card. Draw cards equal to that card’s value.” When played, the card owner chooses one uncovered card, flips that card, and then resolves any triggered text. Then, they draw cards equal to the current value of the chosen card (e.g. Light 0 selects Fire 5. First, Fire 5 is flipped face-down. Then, Light 0 checks the current value of the card, which is now 2. As a result, the active player draws 2 cards.)",
         ],
         rulings: [
-            "If the chosen card is removed from play, it is still referred to directly by the ”that card” text on Light 0. (e.g. Light 0 selects Metal 6. First, Metal 6's top command triggers: because it is about to be flipped, it deletes itself. Then, Light 0 checks the value of Metal 6, and, if it’s in the trash, its current value is 6 since all cards in the trash are face-up. The active player draws 6 cards. If the Metal 6 is private information (i.e. it was shuffled into your deck) it has a value of 2.)"
+            "If the chosen card is removed from play, it is still referred to directly by the ”that card” text on Light 0. (e.g. Light 0 selects Metal 6. First, Metal 6's top command triggers: because it is about to be flipped, it deletes itself. Then, Light 0 checks the value of Metal 6, and, if it’s in the trash, its current value is 6 since all cards in the trash are face-up. The active player draws 6 cards. If the Metal 6 is private information (i.e. it was shuffled into your deck) it has a value of 2.)",
         ],
         keywords: {
             draw: true,
@@ -496,7 +496,7 @@ let cards = [
         middle: "Shift all face-down cards in this line to another line.",
         bottom: "",
         clarifications: [
-            "The face-down cards shifted by Light 3 maintain the same relative positioning in their stacks and are all moved to the same line."
+            "The face-down cards shifted by Light 3 maintain the same relative positioning in their stacks and are all moved to the same line.",
         ],
         keywords: {
             shift: true,
@@ -604,7 +604,7 @@ let cards = [
         middle: "Draw 2 cards. Your opponent cannot compile on their next turn.",
         bottom: "",
         clarifications: [
-            "Metal 1 prevents your opponent from taking the compile action on their next turn, provided the text is visible. Since a player gets 1 action on their turn (compile, play, or refresh), they must either play or refresh on their next turn since they cannot compile."
+            "Metal 1 prevents your opponent from taking the compile action on their next turn, provided the text is visible. Since a player gets 1 action on their turn (compile, play, or refresh), they must either play or refresh on their next turn since they cannot compile.",
         ],
         keywords: {
             compile: true,
@@ -649,7 +649,7 @@ let cards = [
         bottom: "",
         clarifications: [
             "When Metal 6 deletes itself because of its top command, if it is covering a card with text that would trigger, that text triggers before the committed card enters the field.",
-            "When Metal 6 deletes itself as a result of being flipped, the “flip” command is used up and cannot be used on another card, nor can it be used on Metal 6 in the trash, as cards in the trash can’t be flipped."
+            "When Metal 6 deletes itself as a result of being flipped, the “flip” command is used up and cannot be used on another card, nor can it be used on Metal 6 in the trash, as cards in the trash can’t be flipped.",
         ],
         keywords: {
             delete: true,
@@ -694,7 +694,7 @@ let cards = [
         bottom: "",
         clarifications: [
             "The middle command reads “Flip each other face-up card.” This only affects uncovered cards, since it does not say “all”.",
-            "When Plague 3's middle command triggers, the owner notes each uncovered face-up card. Then, they choose which card to process, one at a time. For each card, they flip it and process any consequences before addressing the next card"
+            "When Plague 3's middle command triggers, the owner notes each uncovered face-up card. Then, they choose which card to process, one at a time. For each card, they flip it and process any consequences before addressing the next card",
         ],
         keywords: {
             flip: true,
@@ -813,7 +813,7 @@ let cards = [
         middle: "",
         bottom: "",
         clarifications: [
-            "When compiling, all cards in the line are deleted at the same time. When Speed 2 would be deleted this way, instead, you shift it to another line, preventing the delete of Speed 2 only, and not altering the compile."
+            "When compiling, all cards in the line are deleted at the same time. When Speed 2 would be deleted this way, instead, you shift it to another line, preventing the delete of Speed 2 only, and not altering the compile.",
         ],
         keywords: {
             compile: true,
@@ -858,7 +858,7 @@ let cards = [
         middle: "Refresh. Draw 1 card.",
         bottom: "Skip your check cache phase.",
         clarifications: [
-            "When you refresh as instructed, it is a normal refresh action, including spending the control component, if applicable."
+            "When you refresh as instructed, it is a normal refresh action, including spending the control component, if applicable.",
         ],
         keywords: {
             draw: true,
@@ -935,7 +935,7 @@ let cards = [
         bottom: "",
         clarifications: [
             "When Water 1's middle command triggers, the owner notes the lines that need to be acted in. Then, they choose which line to process, one at a time. For each line, they play the top card of their deck face-down, processing the consequences of that card play before addressing the next line.",
-            "Playing cards from the top of a deck does not force a shuffle if that deck is empty."
+            "Playing cards from the top of a deck does not force a shuffle if that deck is empty.",
         ],
         keywords: {
             play: true,
@@ -987,8 +987,11 @@ let cards = [
         protocol: "Chaos",
         value: 0,
         top: "",
-        middle: "In each line, flip 1 covered card.",
+        middle: "Flip 1 covered card in each line.",
         bottom: "<div><span class='emphasis'>Start:</span> Draw the top card of your opponent's deck. Your opponent draws the top card of your deck.</div>",
+        clarifications: [
+            "When Chaos 0's middle command triggers, the owner notes each line that needs to be acted in. Then, they choose which line to process, one at a time. For each line, they select a covered card to flip, processing the consequences of that flip before addressing the next line. Covered cards never activate their middle command when flipped.",
+        ],
         keywords: {
             draw: true,
             flip: true,
@@ -1001,6 +1004,9 @@ let cards = [
         top: "",
         middle: "Rearrange your protocols. Rearrange your opponent's protocols.",
         bottom: "",
+        clarifications: [
+            "You must make a change to the protocols of both players.",
+        ],
         keywords: {
             rearrange: true,
         }
@@ -1168,6 +1174,9 @@ let cards = [
         top: "<div><span class='emphasis'>End:</span> Either discard 1 card or delete this card.</div>",
         middle: "",
         bottom: "",
+        clarifications: [
+            "This will trigger the middle command of the card it was covering if it deletes itself at the end of turn.",
+        ],
         keywords: {
             delete: true,
             discard: true,
@@ -1210,6 +1219,9 @@ let cards = [
         top: "",
         middle: "",
         bottom: "<div><span class='emphasis'>End:</span> You may shift this card to the line where your opponent has their highest total value.</div>",
+        clarifications: [
+            "Multiple lines can be tied for “highest total value”. In this case, the player chooses.",
+        ],
         keywords: {
             shift: true,
         }
@@ -1353,6 +1365,9 @@ let cards = [
         top: "If you have any cards in your hand, you cannot draw cards.",
         middle: "",
         bottom: "",
+        clarifications: [
+            "Cards are drawn in a batch. Refreshing with 0 cards in hand will draw you 5 cards.",
+        ],
         keywords: {
             draw: true,
         }
@@ -1363,6 +1378,9 @@ let cards = [
         top: "",
         middle: "State a number. Draw 3 cards. Reveal 1 card drawn with the face-up value of your stated number. You may play it.",
         bottom: "",
+        clarifications: [
+            "The played card must be one that you drew with Luck 0. You can play the card face-up or face-down.",
+        ],
         keywords: {
             draw: true,
             play: true,
@@ -1373,8 +1391,11 @@ let cards = [
         protocol: "Luck",
         value: 1,
         top: "",
-        middle: "Play the top card of your deck face-down. Flip that card, ignoring middle commands.",
+        middle: "Play the top card of your deck face-down. Flip that card, ignoring its middle command.",
         bottom: "",
+        clarifications: [
+            "The middle command is only ignored for the flip.",
+        ],
         keywords: {
             flip: true,
             play: true,
@@ -1397,7 +1418,7 @@ let cards = [
         protocol: "Luck",
         value: 3,
         top: "",
-        middle: "State a protocol. Discard the top card of your opponent's deck. If the discarded card matches the stated protocol, delete 1 card.",
+        middle: "State a protocol. Discard the top card of your opponent's deck. If the discarded card matched the stated protocol, delete 1 card.",
         bottom: "",
         keywords: {
             delete: true,
@@ -1441,6 +1462,9 @@ let cards = [
         top: "",
         middle: "",
         bottom: "<div><span class='emphasis'>End:</span> You may resolve the middle command of 1 of your opponent's cards as if it were on this card.</div>",
+        clarifications: [
+            "Mirror 1’s bottom text is blocked by Fear 0 because the text is treated “as if it were on this card” but there’s no text to copy because Fear 0 says the “cards do not have middle commands”.",
+        ],
         keywords: {}
     },
     {
@@ -1449,6 +1473,9 @@ let cards = [
         top: "",
         middle: "Swap all of your cards in one of your stacks with another one of your stacks.",
         bottom: "",
+        clarifications: [
+            "The swapped cards keep the same relative positions. A stack must have at least 1 card in it to swap.",
+        ],
         keywords: {
             swap: true,
         }
@@ -1459,6 +1486,9 @@ let cards = [
         top: "",
         middle: "Flip 1 of your cards. Flip 1 of your opponent's cards in the same line.",
         bottom: "",
+        clarifications: [
+            "If Mirror 3 flips itself first, the second flip doesn’t happen.",
+        ],
         keywords: {
             flip: true,
         }
@@ -1489,6 +1519,9 @@ let cards = [
         top: "",
         middle: "Both players discard their hand.",
         bottom: "<div><span class='emphasis'>End:</span> If your hand is empty, draw 1 card.</div>",
+        clarifications: [
+            "The owner decides which player discards their hand first.",
+        ],
         keywords: {
             discard: true,
             draw: true,
@@ -1553,6 +1586,9 @@ let cards = [
         top: "",
         middle: "Play the top card of your deck face-down in each line with a face-down card.",
         bottom: "",
+        clarifications: [
+            "Both Smoke 0 and 3 count your opponent’s face-down cards.",
+        ],
         keywords: {
             play: true,
             topDeck: true,
@@ -1583,6 +1619,9 @@ let cards = [
         top: "",
         middle: "Play 1 card face-down in a line with a face-down card.",
         bottom: "",
+        clarifications: [
+            "Both Smoke 0 and 3 count your opponent’s face-down cards.",
+        ],
         keywords: {
             play: true,
         }
@@ -1633,7 +1672,7 @@ let cards = [
     {
         protocol: "Time",
         value: 2,
-        top: "<div><span class='emphasis'>After you shuffle your deck:</span> Draw 1 card and you may shift this card.</div>",
+        top: "<div><span class='emphasis'>After you shuffle your deck:</span> Draw 1 card. Then, you may shift this card.</div>",
         middle: "If there are any cards in your trash, you may shuffle your trash into your deck.",
         bottom: "",
         keywords: {
