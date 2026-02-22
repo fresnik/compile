@@ -222,7 +222,7 @@ let cards = [
         value: 3,
         top: "",
         middle: "",
-        bottom: "<div><span class='empahsis'>End:</span> You may discard 1 card. If you do, flip 1 card.</div>",
+        bottom: "<div><span class='emphasis'>End:</span> You may discard 1 card. If you do, flip 1 card.</div>",
         keywords: {
             discard: true,
             flip: true,
@@ -980,7 +980,7 @@ let cards = [
         value: 0,
         top: "",
         middle: "In each line, flip 1 covered card.",
-        bottom: "Start: Draw the top card of your opponent's deck. Your opponent draws the top card of your deck.",
+        bottom: "<div><span class='emphasis'>Start:</span> Draw the top card of your opponent's deck. Your opponent draws the top card of your deck.</div>",
         keywords: {
             draw: true,
             flip: true,
@@ -1019,7 +1019,7 @@ let cards = [
         value: 4,
         top: "",
         middle: "",
-        bottom: "End: Discard your hand. Draw that many cards.",
+        bottom: "<div><span class='emphasis'>End:</span> Discard your hand. Draw that many cards.</div>",
         keywords: {
             discard: true,
             draw: true,
@@ -1046,10 +1046,11 @@ let cards = [
     {
         protocol: "Clarity",
         value: 1,
-        top: "Start: Reveal the top card of your deck. You may discard the top card of your deck.",
+        top: "<div><span class='emphasis'>Start:</span> Reveal the top card of your deck. You may discard the top card of your deck.</div>",
         middle: "Your opponent reveals their hand.",
         bottom: "When this card would be covered: First, draw 3 cards.",
         keywords: {
+            discard: true,
             draw: true,
             reveal: true,
         }
@@ -1062,6 +1063,7 @@ let cards = [
         bottom: "",
         keywords: {
             draw: true,
+            play: true,
             reveal: true,
         }
     },
@@ -1097,7 +1099,7 @@ let cards = [
     {
         protocol: "Corruption",
         value: 0,
-        top: "Start: Flip 1 other face-up covered or uncovered card in this stack.",
+        top: "<div><span class='emphasis'>Start:</span> Flip 1 other face-up covered or uncovered card in this stack.</div>",
         middle: "",
         bottom: "This card may be played on either player's side without matching protocols.",
         keywords: {
@@ -1117,7 +1119,7 @@ let cards = [
     {
         protocol: "Corruption",
         value: 2,
-        top: "After you discard cards: Your opponent discards 1 card.",
+        top: "<div><span class='emphasis'>After you discard cards:</span> Your opponent discards 1 card.</div>",
         middle: "Draw 1 card. Discard 1 card.",
         bottom: "",
         keywords: {
@@ -1148,7 +1150,7 @@ let cards = [
     {
         protocol: "Corruption",
         value: 6,
-        top: "End: Either discard 1 card or delete this card.",
+        top: "<div><span class='emphasis'>End:</span> Either discard 1 card or delete this card.</div>",
         middle: "",
         bottom: "",
         keywords: {
@@ -1159,9 +1161,9 @@ let cards = [
     {
         protocol: "Courage",
         value: 0,
-        top: "Start: If you have no cards in hand, draw 1 card.",
+        top: "<div><span class='emphasis'>Start:</span> If you have no cards in hand, draw 1 card.</div>",
         middle: "Draw 1 card.",
-        bottom: "End: You may discard 1 card. If you do, your opponent discards 1 card.",
+        bottom: "<div><span class='emphasis'>End:</span> You may discard 1 card. If you do, your opponent discards 1 card.</div>",
         keywords: {
             draw: true,
             discard: true,
@@ -1182,7 +1184,7 @@ let cards = [
         value: 2,
         top: "",
         middle: "Draw 1 card.",
-        bottom: "End: If your opponent has a higher total value than you do in this line, draw 1 card.",
+        bottom: "<div><span class='emphasis'>End:</span> If your opponent has a higher total value than you do in this line, draw 1 card.</div>",
         keywords: {
             draw: true,
         }
@@ -1192,7 +1194,7 @@ let cards = [
         value: 3,
         top: "",
         middle: "",
-        bottom: "End: You may shift this card to the line where your opponent has their highest total value.",
+        bottom: "<div><span class='emphasis'>End:</span> You may shift this card to the line where your opponent has their highest total value.</div>",
         keywords: {
             shift: true,
         }
@@ -1210,7 +1212,7 @@ let cards = [
     {
         protocol: "Courage",
         value: 6,
-        top: "End: If your opponent has a higher value in this line than you do, flip this card.",
+        top: "<div><span class='emphasis'>End:</span> If your opponent has a higher value in this line than you do, flip this card.</div>",
         middle: "",
         bottom: "",
         keywords: {
@@ -1284,7 +1286,7 @@ let cards = [
         value: 1,
         top: "",
         middle: "You may shift this card.",
-        bottom: "After your opponent plays a card in this line: Your opponent discards 1 card.",
+        bottom: "<div><span class='emphasis'>After your opponent plays a card in this line:</span> Your opponent discards 1 card.</div>",
         keywords: {
             discard: true,
             shift: true,
@@ -1303,7 +1305,7 @@ let cards = [
     {
         protocol: "Ice",
         value: 3,
-        top: "End: If this card is covered, you may shift it.",
+        top: "<div><span class='emphasis'>End:</span> If this card is covered, you may shift it.</div>",
         middle: "",
         bottom: "",
         keywords: {
@@ -1348,6 +1350,7 @@ let cards = [
         bottom: "",
         keywords: {
             draw: true,
+            play: true,
             reveal: true,
         }
     },
@@ -1418,7 +1421,7 @@ let cards = [
         value: 1,
         top: "",
         middle: "",
-        bottom: "End: You may resolve the middle command of 1 of your opponent's cards as if it were on this card.",
+        bottom: "<div><span class='emphasis'>End:</span> You may resolve the middle command of 1 of your opponent's cards as if it were on this card.</div>",
         keywords: {}
     },
     {
@@ -1446,7 +1449,7 @@ let cards = [
         value: 4,
         top: "",
         middle: "",
-        bottom: "After your opponent draws cards: Draw 1 card.",
+        bottom: "<div><span class='emphasis'>After your opponent draws cards:</span> Draw 1 card.</div>",
         keywords: {
             draw: true,
         }
@@ -1466,7 +1469,7 @@ let cards = [
         value: 1,
         top: "",
         middle: "Both players discard their hand.",
-        bottom: "End: If your hand is empty, draw 1 card.",
+        bottom: "<div><span class='emphasis'>End:</span> If your hand is empty, draw 1 card.</div>",
         keywords: {
             discard: true,
             draw: true,
@@ -1499,7 +1502,7 @@ let cards = [
         value: 4,
         top: "",
         middle: "",
-        bottom: "After you discard cards during your opponent's turn: Draw 1 card.",
+        bottom: "<div><span class='emphasis'>After you discard cards during your opponent's turn:</span> Draw 1 card.</div>",
         keywords: {
             discard: true,
             draw: true,
@@ -1608,7 +1611,7 @@ let cards = [
     {
         protocol: "Time",
         value: 2,
-        top: "After you shuffle your deck: Draw 1 card and you may shift this card.",
+        top: "<div><span class='emphasis'>After you shuffle your deck:</span> Draw 1 card and you may shift this card.</div>",
         middle: "If there are any cards in your trash, you may shuffle your trash into your deck.",
         bottom: "",
         keywords: {
@@ -1651,9 +1654,9 @@ let cards = [
     {
         protocol: "War",
         value: 0,
-        top: "After you refresh: You may flip this card.",
+        top: "<div><span class='emphasis'>After you refresh:</span> You may flip this card.</div>",
         middle: "",
-        bottom: "After your opponent draws cards: You may delete 1 card.",
+        bottom: "<div><span class='emphasis'>After your opponent draws cards:</span> You may delete 1 card.</div>",
         keywords: {
             delete: true,
             draw: true,
@@ -1665,9 +1668,10 @@ let cards = [
         value: 1,
         top: "",
         middle: "",
-        bottom: "After your opponent refreshes: Discard any number of cards. Refresh.",
+        bottom: "<div><span class='emphasis'>After your opponent refreshes:</span> Discard any number of cards. Refresh.</div>",
         keywords: {
             discard: true,
+            refresh: true,
         }
     },
     {
@@ -1675,7 +1679,7 @@ let cards = [
         value: 2,
         top: "",
         middle: "Flip 1 card.",
-        bottom: "After your opponent compiles: Your opponent discards their hand.",
+        bottom: "<div><span class='emphasis'>After your opponent compiles:</span> Your opponent discards their hand.</div>",
         keywords: {
             discard: true,
             flip: true,
@@ -1686,7 +1690,7 @@ let cards = [
         value: 3,
         top: "",
         middle: "Draw 1 card.",
-        bottom: "After your opponent discards cards: You may play 1 card face-down.",
+        bottom: "<div><span class='emphasis'>After your opponent discards cards:</span> You may play 1 card face-down.</div>",
         keywords: {
             discard: true,
             draw: true,
@@ -1718,7 +1722,7 @@ let cards = [
         value: 0,
         top: "",
         middle: "If there are 6 different protocols on cards in the field, flip the Diversity protocol to the compiled side.",
-        bottom: "End: You may play 1 non-Diversity card in this line.",
+        bottom: "<div><span class='emphasis'>End:</span> You may play 1 non-Diversity card in this line.</div>",
         keywords: {
             flip: true,
             play: true,
@@ -1766,7 +1770,7 @@ let cards = [
     {
         protocol: "Diversity",
         value: 6,
-        top: "End: If there are not at least 4 different protocols on cards in the field, delete this card.",
+        top: "<div><span class='emphasis'>End:</span> If there are not at least 4 different protocols on cards in the field, delete this card.</div>",
         middle: "",
         bottom: "",
         keywords: {
@@ -1786,10 +1790,11 @@ let cards = [
         value: 1,
         top: "",
         middle: "Discard 1 card. Refresh.",
-        bottom: "After a player refreshes: Draw the top card of your opponent's deck. Discard 1 card into their trash.",
+        bottom: "<div><span class='emphasis'>After a player refreshes:</span> Draw the top card of your opponent's deck. Discard 1 card into their trash.</div>",
         keywords: {
             discard: true,
             draw: true,
+            refresh: true,
         }
     },
     {
@@ -1797,7 +1802,7 @@ let cards = [
         value: 2,
         top: "",
         middle: "",
-        bottom: "End: Play the top card of your opponent's deck face-down in this stack.",
+        bottom: "<div><span class='emphasis'>End:</span> Play the top card of your opponent's deck face-down in this stack.</div>",
         keywords: {
             play: true,
         }
@@ -1827,7 +1832,7 @@ let cards = [
         value: 6,
         top: "",
         middle: "",
-        bottom: "End: Play the top card of your deck face-down on your opponent's side.",
+        bottom: "<div><span class='emphasis'>End:</span> Play the top card of your deck face-down on your opponent's side.</div>",
         keywords: {
             play: true,
         }
@@ -1846,10 +1851,11 @@ let cards = [
     {
         protocol: "Unity",
         value: 1,
-        top: "Start: If this card is covered, you may shift this card.",
+        top: "<div><span class='emphasis'>Start:</span> If this card is covered, you may shift this card.</div>",
         middle: "If there are 5 or more Unity cards in the field, flip the Unity protocol to the compiled side and delete all cards in that line.",
         bottom: "Unity cards may be played face-up in this line.",
         keywords: {
+            delete: true,
             flip: true,
             play: true,
             shift: true,
@@ -1878,7 +1884,7 @@ let cards = [
     {
         protocol: "Unity",
         value: 4,
-        top: "End: If your hand is empty, reveal your deck, draw all Unity cards from it, and shuffle your deck.",
+        top: "<div><span class='emphasis'>End:</span> If your hand is empty, reveal your deck, draw all Unity cards from it, and shuffle your deck.</div>",
         middle: "",
         bottom: "",
         keywords: {
