@@ -979,32 +979,39 @@ let cards = [
         protocol: "Chaos",
         value: 0,
         top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        middle: "In each line, flip 1 covered card.",
+        bottom: "Start: Draw the top card of your opponent's deck. Your opponent draws the top card of your deck.",
+        keywords: {
+            draw: true,
+            flip: true,
+        }
     },
     {
         protocol: "Chaos",
         value: 1,
         top: "",
-        middle: "",
+        middle: "Rearrange your protocols. Rearrange your opponent's protocols.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            rearrange: true,
+        }
     },
     {
         protocol: "Chaos",
         value: 2,
         top: "",
-        middle: "",
+        middle: "Shift 1 of your covered cards.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            shift: true,
+        }
     },
     {
         protocol: "Chaos",
         value: 3,
         top: "",
         middle: "",
-        bottom: "",
+        bottom: "This card may be played without matching protocols.",
         keywords: {}
     },
     {
@@ -1012,54 +1019,68 @@ let cards = [
         value: 4,
         top: "",
         middle: "",
-        bottom: "",
-        keywords: {}
+        bottom: "End: Discard your hand. Draw that many cards.",
+        keywords: {
+            discard: true,
+            draw: true,
+        }
     },
     {
         protocol: "Chaos",
         value: 5,
         top: "",
+        middle: "Discard 1 card.",
+        bottom: "",
+        keywords: {
+            discard: true,
+        }
+    },
+    {
+        protocol: "Clarity",
+        value: 0,
+        top: "Your total value in this line is increased by 1 for each card in your hand.",
         middle: "",
         bottom: "",
         keywords: {}
     },
     {
         protocol: "Clarity",
-        value: 0,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
-    },
-    {
-        protocol: "Clarity",
         value: 1,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        top: "Start: Reveal the top card of your deck. You may discard the top card of your deck.",
+        middle: "Your opponent reveals their hand.",
+        bottom: "When this card would be covered: First, draw 3 cards.",
+        keywords: {
+            draw: true,
+            reveal: true,
+        }
     },
     {
         protocol: "Clarity",
         value: 2,
         top: "",
-        middle: "",
+        middle: "Reveal your deck. Draw 1 card with a value of 1 revealed this way. Shuffle your deck. Play 1 card with a value of 1.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            draw: true,
+            reveal: true,
+        }
     },
     {
         protocol: "Clarity",
         value: 3,
         top: "",
-        middle: "",
+        middle: "Reveal your deck. Draw 1 card with a value of 5 revealed this way. Shuffle your deck.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            draw: true,
+            reveal: true,
+        }
     },
     {
         protocol: "Clarity",
         value: 4,
         top: "",
-        middle: "",
+        middle: "You may shuffle your trash into your deck.",
         bottom: "",
         keywords: {}
     },
@@ -1067,518 +1088,657 @@ let cards = [
         protocol: "Clarity",
         value: 5,
         top: "",
-        middle: "",
+        middle: "Discard 1 card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+        }
     },
     {
         protocol: "Corruption",
         value: 0,
-        top: "",
+        top: "Start: Flip 1 other face-up covered or uncovered card in this stack.",
         middle: "",
-        bottom: "",
-        keywords: {}
+        bottom: "This card may be played on either player's side without matching protocols.",
+        keywords: {
+            flip: true,
+        }
     },
     {
         protocol: "Corruption",
         value: 1,
         top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        middle: "Return 1 card.",
+        bottom: "When a card would be returned to your opponent's hard: Put that card on top of their deck face-down instead.",
+        keywords: {
+            return: true,
+        }
     },
     {
         protocol: "Corruption",
         value: 2,
-        top: "",
-        middle: "",
+        top: "After you discard cards: Your opponent discards 1 card.",
+        middle: "Draw 1 card. Discard 1 card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+            draw: true,
+        }
     },
     {
         protocol: "Corruption",
         value: 3,
         top: "",
-        middle: "",
+        middle: "You may flip 1 face-up covered card.",
         bottom: "",
-        keywords: {}
-    },
-    {
-        protocol: "Corruption",
-        value: 4,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        keywords: {
+            flip: true,
+        }
     },
     {
         protocol: "Corruption",
         value: 5,
         top: "",
+        middle: "Discard 1 card.",
+        bottom: "",
+        keywords: {
+            discard: true,
+        }
+    },
+    {
+        protocol: "Corruption",
+        value: 6,
+        top: "End: Either discard 1 card or delete this card.",
         middle: "",
         bottom: "",
-        keywords: {}
+        keywords: {
+            delete: true,
+            discard: true,
+        }
     },
     {
         protocol: "Courage",
         value: 0,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        top: "Start: If you have no cards in hand, draw 1 card.",
+        middle: "Draw 1 card.",
+        bottom: "End: You may discard 1 card. If you do, your opponent discards 1 card.",
+        keywords: {
+            draw: true,
+            discard: true,
+        }
     },
     {
         protocol: "Courage",
         value: 1,
         top: "",
-        middle: "",
+        middle: "Delete 1 of your opponent's card in a line where they have a higher total value than you do.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            delete: true,
+        }
     },
     {
         protocol: "Courage",
         value: 2,
         top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        middle: "Draw 1 card.",
+        bottom: "End: If your opponent has a higher total value than you do in this line, draw 1 card.",
+        keywords: {
+            draw: true,
+        }
     },
     {
         protocol: "Courage",
         value: 3,
         top: "",
         middle: "",
-        bottom: "",
-        keywords: {}
-    },
-    {
-        protocol: "Courage",
-        value: 4,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        bottom: "End: You may shift this card to the line where your opponent has their highest total value.",
+        keywords: {
+            shift: true,
+        }
     },
     {
         protocol: "Courage",
         value: 5,
         top: "",
+        middle: "Discard 1 card.",
+        bottom: "",
+        keywords: {
+            discard: true,
+        }
+    },
+    {
+        protocol: "Courage",
+        value: 6,
+        top: "End: If your opponent has a higher value in this line than you do, flip this card.",
         middle: "",
         bottom: "",
-        keywords: {}
+        keywords: {
+            flip: true,
+        }
     },
     {
         protocol: "Fear",
         value: 0,
-        top: "",
-        middle: "",
+        top: "During your turn, your opponent's cards do not have middle commands.",
+        middle: "Shift or flip 1 card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            flip: true,
+            shift: true,
+        }
     },
     {
         protocol: "Fear",
         value: 1,
         top: "",
-        middle: "",
+        middle: "Draw 2 cards. Your opponent discards their hand and draws the amount of cards discarded minus 1.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+            draw: true,
+        }
     },
     {
         protocol: "Fear",
         value: 2,
         top: "",
-        middle: "",
+        middle: "Return 1 of your opponent's cards.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            return: true,
+        }
     },
     {
         protocol: "Fear",
         value: 3,
         top: "",
-        middle: "",
+        middle: "Shift 1 of your opponent's covered or uncovered cards in this line.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            shift: true,
+        }
     },
     {
         protocol: "Fear",
         value: 4,
         top: "",
-        middle: "",
+        middle: "Your opponent discards 1 random card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+        }
     },
     {
         protocol: "Fear",
         value: 5,
         top: "",
-        middle: "",
+        middle: "Discard 1 card.",
         bottom: "",
-        keywords: {}
-    },
-    {
-        protocol: "Ice",
-        value: 0,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+        }
     },
     {
         protocol: "Ice",
         value: 1,
         top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        middle: "You may shift this card.",
+        bottom: "After your opponent plays a card in this line: Your opponent discards 1 card.",
+        keywords: {
+            discard: true,
+            shift: true,
+        }
     },
     {
         protocol: "Ice",
         value: 2,
         top: "",
+        middle: "Shift 1 other card.",
+        bottom: "",
+        keywords: {
+            shift: true,
+        }
+    },
+    {
+        protocol: "Ice",
+        value: 3,
+        top: "End: If this card is covered, you may shift it.",
         middle: "",
         bottom: "",
-        keywords: {}
+        keywords: {
+            shift: true,
+        }
     },
     {
         protocol: "Ice",
         value: 3,
         top: "",
         middle: "",
-        bottom: "",
-        keywords: {}
-    },
-    {
-        protocol: "Ice",
-        value: 4,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        bottom: "This card cannot be flipped.",
+        keywords: {
+            flip: true,
+        }
     },
     {
         protocol: "Ice",
         value: 5,
         top: "",
+        middle: "Discard 1 card.",
+        bottom: "",
+        keywords: {
+            discard: true,
+        }
+    },
+    {
+        protocol: "Ice",
+        value: 6,
+        top: "If you have any cards in your hand, you cannot draw cards.",
         middle: "",
         bottom: "",
-        keywords: {}
+        keywords: {
+            draw: true,
+        }
     },
     {
         protocol: "Luck",
         value: 0,
         top: "",
-        middle: "",
+        middle: "State a number. Draw 3 cards. Reveal 1 card drawn with the face-up value of your stated number. You may play it.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            draw: true,
+            reveal: true,
+        }
     },
     {
         protocol: "Luck",
         value: 1,
         top: "",
-        middle: "",
+        middle: "Play the top card of your deck face-down. Flip that card, ignoring middle commands.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            flip: true,
+            play: true,
+        }
     },
     {
         protocol: "Luck",
         value: 2,
         top: "",
-        middle: "",
+        middle: "Discard the top card of your deck. Draw cards equal to the value of the discarded card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+            draw: true,
+        }
     },
     {
         protocol: "Luck",
         value: 3,
         top: "",
-        middle: "",
+        middle: "State a protocol. Discard the top card of your opponent's deck. If the discarded card matches the stated protocol, delete 1 card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            delete: true,
+            discard: true,
+        }
     },
     {
         protocol: "Luck",
         value: 4,
         top: "",
-        middle: "",
+        middle: "Discard the top card of your deck. Delete 1 covered or uncovered card that shares a value with the discarded card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            delete: true,
+            discard: true,
+        }
     },
     {
         protocol: "Luck",
         value: 5,
         top: "",
+        middle: "Discard 1 card.",
+        bottom: "",
+        keywords: {
+            discard: true,
+        }
+    },
+    {
+        protocol: "Mirror",
+        value: 0,
+        top: "Your total value in this line is increased by 1 for each of your opponent's cards in this line.",
         middle: "",
         bottom: "",
         keywords: {}
     },
     {
         protocol: "Mirror",
-        value: 0,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
-    },
-    {
-        protocol: "Mirror",
         value: 1,
         top: "",
         middle: "",
-        bottom: "",
+        bottom: "End: You may resolve the middle command of 1 of your opponent's cards as if it were on this card.",
         keywords: {}
     },
     {
         protocol: "Mirror",
         value: 2,
         top: "",
-        middle: "",
+        middle: "Swap all of your cards in one of your stacks with another one of your stacks.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            swap: true,
+        }
     },
     {
         protocol: "Mirror",
         value: 3,
         top: "",
-        middle: "",
+        middle: "Flip 1 of your cards. Flip 1 of your opponent's cards in the same line.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            flip: true,
+        }
     },
     {
         protocol: "Mirror",
         value: 4,
         top: "",
         middle: "",
-        bottom: "",
-        keywords: {}
+        bottom: "After your opponent draws cards: Draw 1 card.",
+        keywords: {
+            draw: true,
+        }
     },
     {
         protocol: "Mirror",
         value: 5,
         top: "",
-        middle: "",
+        middle: "Discard 1 card.",
         bottom: "",
-        keywords: {}
-    },
-    {
-        protocol: "Peace",
-        value: 0,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+        }
     },
     {
         protocol: "Peace",
         value: 1,
         top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        middle: "Both players discard their hand.",
+        bottom: "End: If your hand is empty, draw 1 card.",
+        keywords: {
+            discard: true,
+            draw: true,
+        }
     },
     {
         protocol: "Peace",
         value: 2,
         top: "",
-        middle: "",
+        middle: "Draw 1 card. Play 1 card face-down.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            draw: true,
+            play: true,
+        }
     },
     {
         protocol: "Peace",
         value: 3,
         top: "",
-        middle: "",
+        middle: "You may discard 1 card. Flip 1 card that has a value greater than the number of cards in your hand.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+            flip: true,
+        }
     },
     {
         protocol: "Peace",
         value: 4,
         top: "",
         middle: "",
-        bottom: "",
-        keywords: {}
+        bottom: "After you discard cards during your opponent's turn: Draw 1 card.",
+        keywords: {
+            discard: true,
+            draw: true,
+        }
     },
     {
         protocol: "Peace",
         value: 5,
         top: "",
+        middle: "Discard 1 card.",
+        bottom: "",
+        keywords: {
+            discard: true,
+        }
+    },
+    {
+        protocol: "Peace",
+        value: 6,
+        top: "",
+        middle: "If you have more than 1 card in your hand, flip this card.",
+        bottom: "",
+        keywords: {
+            flip: true,
+        }
+    },
+    {
+        protocol: "Smoke",
+        value: 0,
+        top: "",
+        middle: "Play the top card of your deck face-down in each line with a face-down card.",
+        bottom: "",
+        keywords: {
+            play: true,
+        }
+    },
+    {
+        protocol: "Smoke",
+        value: 1,
+        top: "",
+        middle: "Flip 1 of your cards. You may shift that card.",
+        bottom: "",
+        keywords: {
+            flip: true,
+            shift: true,
+        }
+    },
+    {
+        protocol: "Smoke",
+        value: 2,
+        top: "Your total value in this line is increased by 1 for each face-down card in this line.",
         middle: "",
         bottom: "",
         keywords: {}
     },
     {
         protocol: "Smoke",
-        value: 0,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
-    },
-    {
-        protocol: "Smoke",
-        value: 1,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
-    },
-    {
-        protocol: "Smoke",
-        value: 2,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
-    },
-    {
-        protocol: "Smoke",
         value: 3,
         top: "",
-        middle: "",
+        middle: "Play 1 card face-down in a line with a face-down card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            play: true,
+        }
     },
     {
         protocol: "Smoke",
         value: 4,
         top: "",
-        middle: "",
+        middle: "Shift 1 covered face-down card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            shift: true,
+        }
     },
     {
         protocol: "Smoke",
         value: 5,
         top: "",
-        middle: "",
+        middle: "Discard 1 card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+        }
     },
     {
         protocol: "Time",
         value: 0,
         top: "",
-        middle: "",
+        middle: "Play 1 card from your trash. Shuffle your trash into your deck.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            play: true,
+        }
     },
     {
         protocol: "Time",
         value: 1,
         top: "",
-        middle: "",
+        middle: "Flip 1 covered card. Discard your entire deck.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+            flip: true,
+        }
     },
     {
         protocol: "Time",
         value: 2,
-        top: "",
-        middle: "",
+        top: "After you shuffle your deck: Draw 1 card and you may shift this card.",
+        middle: "If there are any cards in your trash, you may shuffle your trash into your deck.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            draw: true,
+            shift: true,
+        }
     },
     {
         protocol: "Time",
         value: 3,
         top: "",
-        middle: "",
+        middle: "Reveal 1 card from your trash. Play it face-down in another line.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            play: true,
+            reveal: true,
+        }
     },
     {
         protocol: "Time",
         value: 4,
         top: "",
-        middle: "",
+        middle: "Draw 2 cards. Discard 2 cards.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+            draw: true,
+        }
     },
     {
         protocol: "Time",
         value: 5,
         top: "",
-        middle: "",
+        middle: "Discard 1 card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+        }
     },
     {
         protocol: "War",
         value: 0,
-        top: "",
+        top: "After you refresh: You may flip this card.",
         middle: "",
-        bottom: "",
-        keywords: {}
+        bottom: "After your opponent draws cards: You may delete 1 card.",
+        keywords: {
+            delete: true,
+            draw: true,
+            flip: true,
+        }
     },
     {
         protocol: "War",
         value: 1,
         top: "",
         middle: "",
-        bottom: "",
-        keywords: {}
+        bottom: "After your opponent refreshes: Discard any number of cards. Refresh.",
+        keywords: {
+            discard: true,
+        }
     },
     {
         protocol: "War",
         value: 2,
         top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        middle: "Flip 1 card.",
+        bottom: "After your opponent compiles: Your opponent discards their hand.",
+        keywords: {
+            discard: true,
+            flip: true,
+        }
     },
     {
         protocol: "War",
         value: 3,
         top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        middle: "Draw 1 card.",
+        bottom: "After your opponent discards cards: You may play 1 card face-down.",
+        keywords: {
+            discard: true,
+            draw: true,
+            play: true,
+        }
     },
     {
         protocol: "War",
         value: 4,
         top: "",
-        middle: "",
+        middle: "Your opponent discards 1 card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+        }
     },
     {
         protocol: "War",
         value: 5,
         top: "",
-        middle: "",
+        middle: "Discard 1 card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+        }
     },
     {
         protocol: "Diversity",
         value: 0,
         top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        middle: "If there are 6 different protocols on cards in the field, flip the Diversity protocol to the compiled side.",
+        bottom: "End: You may play 1 non-Diversity card in this line.",
+        keywords: {
+            flip: true,
+            play: true,
+        }
     },
     {
         protocol: "Diversity",
         value: 1,
         top: "",
-        middle: "",
+        middle: "Shift 1 card. Draw cards equal to the number of different protocols on cards in this line.",
         bottom: "",
-        keywords: {}
-    },
-    {
-        protocol: "Diversity",
-        value: 2,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        keywords: {
+            draw: true,
+            shift: true,
+        }
     },
     {
         protocol: "Diversity",
         value: 3,
-        top: "",
+        top: "Your total value in this line is increased by 2 if there are any non-Diversity face-up cards in this stack.",
         middle: "",
         bottom: "",
         keywords: {}
@@ -1587,23 +1747,37 @@ let cards = [
         protocol: "Diversity",
         value: 4,
         top: "",
-        middle: "",
+        middle: "Flip 1 card with a value less than the number of different protocols on cards in the field.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            flip: true,
+        }
     },
     {
         protocol: "Diversity",
         value: 5,
         top: "",
+        middle: "Discard 1 card.",
+        bottom: "",
+        keywords: {
+            discard: true,
+        }
+    },
+    {
+        protocol: "Diversity",
+        value: 6,
+        top: "End: If there are not at least 4 different protocols on cards in the field, delete this card.",
         middle: "",
         bottom: "",
-        keywords: {}
+        keywords: {
+            delete: true,
+        }
     },
     {
         protocol: "Assimilation",
         value: 0,
         top: "",
-        middle: "",
+        middle: "Put 1 of your opponent's covered or uncovered face-down cards into your hand.",
         bottom: "",
         keywords: {}
     },
@@ -1611,89 +1785,116 @@ let cards = [
         protocol: "Assimilation",
         value: 1,
         top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        middle: "Discard 1 card. Refresh.",
+        bottom: "After a player refreshes: Draw the top card of your opponent's deck. Discard 1 card into their trash.",
+        keywords: {
+            discard: true,
+            draw: true,
+        }
     },
     {
         protocol: "Assimilation",
         value: 2,
         top: "",
         middle: "",
-        bottom: "",
-        keywords: {}
-    },
-    {
-        protocol: "Assimilation",
-        value: 3,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        bottom: "End: Play the top card of your opponent's deck face-down in this stack.",
+        keywords: {
+            play: true,
+        }
     },
     {
         protocol: "Assimilation",
         value: 4,
         top: "",
-        middle: "",
+        middle: "Draw the top card of your opponent's deck. Your opponent draws the top card of your deck.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            draw: true,
+        }
     },
     {
         protocol: "Assimilation",
         value: 5,
         top: "",
-        middle: "",
+        middle: "Discard 1 card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+        }
+    },
+    {
+        protocol: "Assimilation",
+        value: 6,
+        top: "",
+        middle: "",
+        bottom: "End: Play the top card of your deck face-down on your opponent's side.",
+        keywords: {
+            play: true,
+        }
     },
     {
         protocol: "Unity",
         value: 0,
         top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        middle: "If there is another Unity card in the field, either flip 1 card or draw 1 card.",
+        bottom: "When this card would be covered by a Unity card: First, either flip 1 card or draw 1 card.",
+        keywords: {
+            draw: true,
+            flip: true,
+        }
     },
     {
         protocol: "Unity",
         value: 1,
-        top: "",
-        middle: "",
-        bottom: "",
-        keywords: {}
+        top: "Start: If this card is covered, you may shift this card.",
+        middle: "If there are 5 or more Unity cards in the field, flip the Unity protocol to the compiled side and delete all cards in that line.",
+        bottom: "Unity cards may be played face-up in this line.",
+        keywords: {
+            flip: true,
+            play: true,
+            shift: true,
+        }
     },
     {
         protocol: "Unity",
         value: 2,
         top: "",
-        middle: "",
+        middle: "Draw cards equal to the number of Unity cards in the field.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            draw: true,
+        }
     },
     {
         protocol: "Unity",
         value: 3,
         top: "",
-        middle: "",
+        middle: "If there is another Unity card in the field, you may flip 1 face-up card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            flip: true,
+        }
     },
     {
         protocol: "Unity",
         value: 4,
-        top: "",
+        top: "End: If your hand is empty, reveal your deck, draw all Unity cards from it, and shuffle your deck.",
         middle: "",
         bottom: "",
-        keywords: {}
+        keywords: {
+            draw: true,
+            reveal: true,
+        }
     },
     {
         protocol: "Unity",
         value: 5,
         top: "",
-        middle: "",
+        middle: "Discard 1 card.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            discard: true,
+        }
     },
 ]
 
