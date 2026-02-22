@@ -257,6 +257,7 @@ let cards = [
         bottom: "",
         keywords: {
             play: true,
+            topDeck: true,
         }
     },
     {
@@ -312,6 +313,7 @@ let cards = [
         bottom: "",
         keywords: {
             play: true,
+            topDeck: true,
         }
     },
     {
@@ -392,6 +394,7 @@ let cards = [
         keywords: {
             delete: true,
             play: true,
+            topDeck: true,
         }
     },
     {
@@ -423,6 +426,7 @@ let cards = [
         bottom: "<div><span class='emphasis'>When this card would be covered:</span> First, play the top card of your deck face-down in another line.</div>",
         keywords: {
             play: true,
+            topDeck: true,
         }
     },
     {
@@ -527,6 +531,7 @@ let cards = [
         keywords: {
             draw: true,
             give: true,
+            topDeck: true,
         }
     },
     {
@@ -602,6 +607,7 @@ let cards = [
             "Metal 1 prevents your opponent from taking the compile action on their next turn, provided the text is visible. Since a player gets 1 action on their turn (compile, play, or refresh), they must either play or refresh on their next turn since they cannot compile."
         ],
         keywords: {
+            compile: true,
             draw: true,
         }
     },
@@ -810,6 +816,7 @@ let cards = [
             "When compiling, all cards in the line are deleted at the same time. When Speed 2 would be deleted this way, instead, you shift it to another line, preventing the delete of Speed 2 only, and not altering the compile."
         ],
         keywords: {
+            compile: true,
             shift: true,
         }
     },
@@ -932,6 +939,7 @@ let cards = [
         ],
         keywords: {
             play: true,
+            topDeck: true,
         }
     },
     {
@@ -984,6 +992,7 @@ let cards = [
         keywords: {
             draw: true,
             flip: true,
+            topDeck: true,
         }
     },
     {
@@ -1053,6 +1062,7 @@ let cards = [
             discard: true,
             draw: true,
             reveal: true,
+            topDeck: true,
         }
     },
     {
@@ -1065,6 +1075,7 @@ let cards = [
             draw: true,
             play: true,
             reveal: true,
+            shuffle: true,
         }
     },
     {
@@ -1076,6 +1087,7 @@ let cards = [
         keywords: {
             draw: true,
             reveal: true,
+            shuffle: true,
         }
     },
     {
@@ -1084,7 +1096,10 @@ let cards = [
         top: "",
         middle: "You may shuffle your trash into your deck.",
         bottom: "",
-        keywords: {}
+        keywords: {
+            shuffle: true,
+            trash: true,
+        }
     },
     {
         protocol: "Clarity",
@@ -1363,6 +1378,7 @@ let cards = [
         keywords: {
             flip: true,
             play: true,
+            topDeck: true,
         }
     },
     {
@@ -1374,6 +1390,7 @@ let cards = [
         keywords: {
             discard: true,
             draw: true,
+            topDeck: true,
         }
     },
     {
@@ -1385,6 +1402,7 @@ let cards = [
         keywords: {
             delete: true,
             discard: true,
+            topDeck: true,
         }
     },
     {
@@ -1396,6 +1414,7 @@ let cards = [
         keywords: {
             delete: true,
             discard: true,
+            topDeck: true,
         }
     },
     {
@@ -1536,6 +1555,7 @@ let cards = [
         bottom: "",
         keywords: {
             play: true,
+            topDeck: true,
         }
     },
     {
@@ -1595,6 +1615,8 @@ let cards = [
         bottom: "",
         keywords: {
             play: true,
+            shuffle: true,
+            trash: true,
         }
     },
     {
@@ -1617,6 +1639,8 @@ let cards = [
         keywords: {
             draw: true,
             shift: true,
+            shuffle: true,
+            trash: true,
         }
     },
     {
@@ -1628,6 +1652,7 @@ let cards = [
         keywords: {
             play: true,
             reveal: true,
+            trash: true,
         }
     },
     {
@@ -1681,6 +1706,7 @@ let cards = [
         middle: "Flip 1 card.",
         bottom: "<div><span class='emphasis'>After your opponent compiles:</span> Your opponent discards their hand.</div>",
         keywords: {
+            compile: true,
             discard: true,
             flip: true,
         }
@@ -1724,6 +1750,7 @@ let cards = [
         middle: "If there are 6 different protocols on cards in the field, flip the Diversity protocol to the compiled side.",
         bottom: "<div><span class='emphasis'>End:</span> You may play 1 non-Diversity card in this line.</div>",
         keywords: {
+            compile: true,
             flip: true,
             play: true,
         }
@@ -1795,6 +1822,8 @@ let cards = [
             discard: true,
             draw: true,
             refresh: true,
+            topDeck: true,
+            trash: true,
         }
     },
     {
@@ -1805,6 +1834,7 @@ let cards = [
         bottom: "<div><span class='emphasis'>End:</span> Play the top card of your opponent's deck face-down in this stack.</div>",
         keywords: {
             play: true,
+            topDeck: true,
         }
     },
     {
@@ -1815,6 +1845,7 @@ let cards = [
         bottom: "",
         keywords: {
             draw: true,
+            topDeck: true,
         }
     },
     {
@@ -1835,6 +1866,7 @@ let cards = [
         bottom: "<div><span class='emphasis'>End:</span> Play the top card of your deck face-down on your opponent's side.</div>",
         keywords: {
             play: true,
+            topDeck: true,
         }
     },
     {
@@ -1855,6 +1887,7 @@ let cards = [
         middle: "If there are 5 or more Unity cards in the field, flip the Unity protocol to the compiled side and delete all cards in that line.",
         bottom: "Unity cards may be played face-up in this line.",
         keywords: {
+            compile: true,
             delete: true,
             flip: true,
             play: true,
@@ -1890,6 +1923,7 @@ let cards = [
         keywords: {
             draw: true,
             reveal: true,
+            shuffle: true,
         }
     },
     {
@@ -2009,13 +2043,13 @@ function checkFilters() {
 
     let [zero, one, two, three, four, five, six] = checkValue();
 
-    let [deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, swap, take] = checkKeywords();
+    let [compile, deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, shuffle, swap, take, topDeck, trash] = checkKeywords();
 
     array = getProtocols(array);
 
     array = getValue(array, zero, one, two, three, four, five, six);
 
-    array = getKeywords(array, deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, swap, take);
+    array = getKeywords(array, compile, deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, shuffle, swap, take, topDeck, trash);
 
     displayCards(array);
 }
@@ -2034,6 +2068,7 @@ function checkValue() {
 };
 
 function checkKeywords() {
+    let compile = $('.js_compile').is(':checked');
     let deleteVar = $('.js_delete').is(':checked');
     let discard = $('.js_discard').is(':checked');
     let draw = $('.js_draw').is(':checked');
@@ -2045,10 +2080,13 @@ function checkKeywords() {
     let reveal = $('.js_reveal').is(':checked');
     let refresh = $('.js_refresh').is(':checked');
     let shift = $('.js_shift').is(':checked');
+    let shuffle = $('.js_shuffle').is(':checked');
     let swap = $('.js_swap').is(':checked');
     let take = $('.js_take').is(':checked');
+    let topDeck = $('.js_top-deck').is(':checked');
+    let trash = $('.js_trash').is(':checked');
 
-    return [deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, swap, take];
+    return [compile, deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, shuffle, swap, take, topDeck, trash];
 }
 
 function getProtocols(array) {
@@ -2085,7 +2123,10 @@ function getValue(array, zero, one, two, three, four, five, six) {
     return array;
 }
 
-function getKeywords(array, deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, swap, take) {
+function getKeywords(array, compile, deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, shuffle, swap, take, topDeck, trash) {
+    if (compile) {
+        array = array.filter(cards => cards.keywords.compile == true);
+    }
     if (deleteVar) {
         array = array.filter(cards => cards.keywords.delete == true);
     }
@@ -2119,11 +2160,20 @@ function getKeywords(array, deleteVar, discard, draw, flip, give, play, rearrang
     if (shift) {
         array = array.filter(cards => cards.keywords.shift == true);
     }
+    if (shuffle) {
+        array = array.filter(cards => cards.keywords.shuffle == true);
+    }
     if (swap) {
         array = array.filter(cards => cards.keywords.swap == true);
     }
     if (take) {
         array = array.filter(cards => cards.keywords.take == true);
+    }
+    if (topDeck) {
+        array = array.filter(cards => cards.keywords.topDeck == true);
+    }
+    if (trash) {
+        array = array.filter(cards => cards.keywords.trash == true);
     }
 
     return array;
