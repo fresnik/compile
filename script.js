@@ -1135,6 +1135,7 @@ let cards = [
         bottom: "<div><span class='emphasis'>When a card would be returned to your opponent's hand:</span> Put that card on top of their deck face-down instead.</div>",
         keywords: {
             return: true,
+            topDeck: true,
         }
     },
     {
