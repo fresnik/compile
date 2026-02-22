@@ -674,7 +674,7 @@ let cards = [
         protocol: "Plague",
         value: 2,
         top: "",
-        middle: "Dicard 1 or more cards. Your opponent discards the amount of cards discarded plus 1.",
+        middle: "Discard 1 or more cards. Your opponent discards the amount of cards discarded plus 1.",
         bottom: "",
         keywords: {
             discard: true,
@@ -894,7 +894,7 @@ let cards = [
         protocol: "Spirit",
         value: 4,
         top: "",
-        middle: "Swap the positions of 2 of your protocols",
+        middle: "Swap the positions of 2 of your protocols.",
         bottom: "",
         keywords: {
             swap: true,
@@ -1048,7 +1048,7 @@ let cards = [
         value: 1,
         top: "<div><span class='emphasis'>Start:</span> Reveal the top card of your deck. You may discard the top card of your deck.</div>",
         middle: "Your opponent reveals their hand.",
-        bottom: "When this card would be covered: First, draw 3 cards.",
+        bottom: "<div><span class='emphasis'>When this card would be covered:</span> First, draw 3 cards.</div>",
         keywords: {
             discard: true,
             draw: true,
@@ -1111,7 +1111,7 @@ let cards = [
         value: 1,
         top: "",
         middle: "Return 1 card.",
-        bottom: "When a card would be returned to your opponent's hard: Put that card on top of their deck face-down instead.",
+        bottom: "When a card would be returned to your opponent's hand: Put that card on top of their deck face-down instead.",
         keywords: {
             return: true,
         }
@@ -1173,7 +1173,7 @@ let cards = [
         protocol: "Courage",
         value: 1,
         top: "",
-        middle: "Delete 1 of your opponent's card in a line where they have a higher total value than you do.",
+        middle: "Delete 1 of your opponent's cards in a line where they have a higher total value than you do.",
         bottom: "",
         keywords: {
             delete: true,
@@ -1842,7 +1842,7 @@ let cards = [
         value: 0,
         top: "",
         middle: "If there is another Unity card in the field, either flip 1 card or draw 1 card.",
-        bottom: "When this card would be covered by a Unity card: First, either flip 1 card or draw 1 card.",
+        bottom: "<div><span class='emphasis'>When this card would be covered by a Unity card:</span> First, either flip 1 card or draw 1 card.</div>",
         keywords: {
             draw: true,
             flip: true,
