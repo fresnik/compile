@@ -118,6 +118,15 @@
   .card--unity {
     background: #996d7c;
   }
+  .card--envy {
+    background: rgb(95, 108, 98);
+  }
+  .card--lust {
+    background: rgb(102, 79, 79);
+  }
+  .card--pride {
+    background: rgb(168, 147, 90);
+  }
 
   .card__top {
     display: flex;

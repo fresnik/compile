@@ -14,6 +14,8 @@
             <div class="filters__btn-container">
                 <button class="filters__btn js_select-all-protocol">Select All</button>
                 <button class="filters__btn js_remove-all-protocol">Remove All</button>
+                <button class="filters__btn js_expand-all-programs">Expand All</button>
+                <button class="filters__btn js_collapse-all-programs">Collapse All</button>
             </div>
             <ul class="filters__list js_protocol-list"></ul>
         </div>
@@ -64,6 +66,10 @@
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_keyword js_compile" type="checkbox" id="compile" name="checkbox" value="1">
                     <label class="filters__label" for="compile">Compile</label>
+                </li>
+                <li class="filters__list-item">
+                    <input class="filters__input js_criteria js_keyword js_control" type="checkbox" id="control" name="checkbox" value="1">
+                    <label class="filters__label" for="control">Control</label>
                 </li>
                 <li class="filters__list-item">
                     <input class="filters__input js_criteria js_keyword js_delete" type="checkbox" id="delete" name="checkbox" value="1">

@@ -1976,13 +1976,50 @@ let cards = [
             discard: true,
         }
     },
+    {
+        protocol: "Envy",
+        value: 1,
+        top: "",
+        middle: "If your opponent has control, you may flip 1 card.",
+        bottom: "<div><span class='emphasis'>Start:</span> If your opponent has control, gain control.</div>",
+        keywords: {
+            control: true,
+            flip: true,
+        }
+    },
+    {
+        protocol: "Lust",
+        value: 0,
+        top: "Each player's total value in this line is increased by 10.",
+        middle: "Gain control.",
+        bottom: "Your opponent can't compile if you have control.",
+        keywords: {
+            compile: true,
+            control: true,
+        }
+    },
+    {
+        protocol: "Pride",
+        value: 0,
+        top: "<div><span class='emphasis'>After you compile:</span> Refresh.</div>",
+        middle: "If you have control, shift 1 other card. Else, shift 1 of your cards.",
+        bottom: "",
+        keywords: {
+            compile: true,
+            control: true,
+            refresh: true,
+            shift: true,
+        }
+    },
 ]
 
 const programs = {
     "Main 1": ["Darkness", "Death", "Fire", "Gravity", "Life", "Light", "Metal", "Plague", "Psychic", "Speed", "Spirit", "Water"],
     "Aux 1": ["Apathy", "Hate", "Love"],
     "Main 2": ["Chaos", "Clarity", "Corruption", "Courage", "Fear", "Ice", "Luck", "Mirror", "Peace", "Smoke", "Time", "War"],
-    "Aux 2": ["Diversity", "Assimilation", "Unity"]
+    "Aux 2": ["Diversity", "Assimilation", "Unity"],
+    "Main 3": ["Ambush", "Envy", "Fulcrum", "Gluttony", "Greed", "Lust", "Momentum", "Nova", "Overwhelm", "Pride", "Sloth", "Wrath"],
+    "Aux 3": ["Flexible", "Inert", "Rigid"]
 };
 
 initialize();
@@ -2034,6 +2071,16 @@ $(document).on('click', '.js_collapse-program', function() {
     $(this).html($list.hasClass('filters__program-list--collapsed') ? '&#9654;' : '&#9660;');
 });
 
+$(document).on('click', '.js_expand-all-programs', function() {
+    $('.filters__program-list').removeClass('filters__program-list--collapsed');
+    $('.js_collapse-program').html('&#9660;');
+});
+
+$(document).on('click', '.js_collapse-all-programs', function() {
+    $('.filters__program-list').addClass('filters__program-list--collapsed');
+    $('.js_collapse-program').html('&#9654;');
+});
+
 $(document).on('click', '.js_select-all-program', function() {
     $(this).closest('.filters__program').find('.js_protocol').prop('checked', true);
     checkFilters();
@@ -2051,6 +2098,9 @@ function buildProtocolFilter() {
     Object.entries(programs).forEach(([programName, protocols]) => {
         const programId = programName.toLowerCase().replace(/\s+/g, '-');
         const listId = `program-list-${programId}`;
+        const collapsed = programName !== "Main 1";
+        const listClass = collapsed ? "filters__program-list filters__program-list--collapsed" : "filters__program-list";
+        const arrow = collapsed ? "&#9654;" : "&#9660;";
 
         const protocolItems = protocols.map(protocol => {
             const protocolLower = protocol.toLowerCase();
@@ -2064,14 +2114,14 @@ function buildProtocolFilter() {
         $list.append(`
             <li class="filters__program">
                 <div class="filters__program-header">
-                    <button class="filters__collapse-btn js_collapse-program" data-target="${listId}">&#9660;</button>
+                    <button class="filters__collapse-btn js_collapse-program" data-target="${listId}">${arrow}</button>
                     <span class="filters__program-name">${programName}</span>
                     <div class="filters__program-btns">
                         <button class="filters__btn filters__btn--sm js_select-all-program">Select All</button>
                         <button class="filters__btn filters__btn--sm js_remove-all-program">Remove All</button>
                     </div>
                 </div>
-                <ul class="filters__program-list" id="${listId}">
+                <ul class="${listClass}" id="${listId}">
                     ${protocolItems}
                 </ul>
             </li>`);
@@ -2083,13 +2133,13 @@ function checkFilters() {
 
     let [zero, one, two, three, four, five, six] = checkValue();
 
-    let [compile, deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, shuffle, swap, take, topDeck, trash] = checkKeywords();
+    let [compile, control, deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, shuffle, swap, take, topDeck, trash] = checkKeywords();
 
     array = getProtocols(array);
 
     array = getValue(array, zero, one, two, three, four, five, six);
 
-    array = getKeywords(array, compile, deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, shuffle, swap, take, topDeck, trash);
+    array = getKeywords(array, compile, control, deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, shuffle, swap, take, topDeck, trash);
 
     displayCards(array);
 }
@@ -2109,6 +2159,7 @@ function checkValue() {
 
 function checkKeywords() {
     let compile = $('.js_compile').is(':checked');
+    let control = $('.js_control').is(':checked');
     let deleteVar = $('.js_delete').is(':checked');
     let discard = $('.js_discard').is(':checked');
     let draw = $('.js_draw').is(':checked');
@@ -2126,7 +2177,7 @@ function checkKeywords() {
     let topDeck = $('.js_top-deck').is(':checked');
     let trash = $('.js_trash').is(':checked');
 
-    return [compile, deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, shuffle, swap, take, topDeck, trash];
+    return [compile, control, deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, shuffle, swap, take, topDeck, trash];
 }
 
 function getProtocols(array) {
@@ -2163,9 +2214,12 @@ function getValue(array, zero, one, two, three, four, five, six) {
     return array;
 }
 
-function getKeywords(array, compile, deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, shuffle, swap, take, topDeck, trash) {
+function getKeywords(array, compile, control, deleteVar, discard, draw, flip, give, play, rearrange, returnVar, reveal, refresh, shift, shuffle, swap, take, topDeck, trash) {
     if (compile) {
         array = array.filter(cards => cards.keywords.compile == true);
+    }
+    if (control) {
+        array = array.filter(cards => cards.keywords.control == true);
     }
     if (deleteVar) {
         array = array.filter(cards => cards.keywords.delete == true);
