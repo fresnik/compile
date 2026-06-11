@@ -1988,6 +1988,17 @@ let cards = [
         }
     },
     {
+        protocol: "Greed",
+        value: 2,
+        top: "",
+        middle: "Your opponent discards 1 card.",
+        bottom: "<div><span class='emphasis'>Start:</span> You may return 1 of your cards.</div>",
+        keywords: {
+            discard: true,
+            return: true,
+        }
+    },
+    {
         protocol: "Lust",
         value: 0,
         top: "Each player's total value in this line is increased by 10.",
@@ -1996,6 +2007,18 @@ let cards = [
         keywords: {
             compile: true,
             control: true,
+        }
+    },
+    {
+        protocol: "Lust",
+        value: 4,
+        top: "",
+        middle: "Reveal your hand. Your opponent loses control.",
+        bottom: "<div><span class='emphasis'>After your opponent gains control:</span> Draw 1 card.</div>",
+        keywords: {
+            control: true,
+            draw: true,
+            reveal: true,
         }
     },
     {
@@ -2009,6 +2032,17 @@ let cards = [
             control: true,
             refresh: true,
             shift: true,
+        }
+    },
+    {
+        protocol: "Flexible",
+        value: 3,
+        top: "",
+        middle: "Shift 1 of your opponent's cards or swap 2 of your protocols.",
+        bottom: "",
+        keywords: {
+            shift: true,
+            swap: true,
         }
     },
 ]
