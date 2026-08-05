@@ -1977,6 +1977,27 @@ let cards = [
         }
     },
     {
+        protocol: "Ambush",
+        value: 1,
+        top: "",
+        middle: "Flip all of your other cards with a value of 0 or 1. Draw 1 card for each card flipped.",
+        bottom: "",
+        keywords: {
+            draw: true,
+            flip: true,
+        }
+    },
+    {
+        protocol: "Fulcrum",
+        value: 2,
+        top: "",
+        middle: "If you have exactly 2 cards in hand, delete 1 of your opponent's cards.",
+        bottom: "",
+        keywords: {
+            delete: true,
+        }
+    },
+    {
         protocol: "Envy",
         value: 1,
         top: "",
@@ -1985,6 +2006,27 @@ let cards = [
         keywords: {
             control: true,
             flip: true,
+        }
+    },
+    {
+        protocol: "Gluttony",
+        value: 1,
+        top: "",
+        middle: "Draw 2 cards.",
+        bottom: "<div><span class='emphasis'>After a player clears cache:</span> Delete 1 card.</div>",
+        keywords: {
+            delete: true,
+            draw: true,
+        }
+    },
+    {
+        protocol: "Greed",
+        value: 1,
+        top: "",
+        middle: "",
+        bottom: "<div><span class='emphasis'>End:</span> Compile a line where you have at least 10 value and a higher total value than your opponent.</div>",
+        keywords: {
+            compile: true,
         }
     },
     {
@@ -2022,6 +2064,36 @@ let cards = [
         }
     },
     {
+        protocol: "Momentum",
+        value: 4,
+        top: "",
+        middle: "Rearrange your protocols.",
+        bottom: "",
+        keywords: {
+            rearrange: true,
+        }
+    },
+    {
+        protocol: "Nova",
+        value: 1,
+        top: "",
+        middle: "Your opponent discards cards equal to the number of cards in this stack.",
+        bottom: "",
+        keywords: {
+            discard: true,
+        }
+    },
+    {
+        protocol: "Overwhelm",
+        value: 1,
+        top: "",
+        middle: "Play the top card of your deck face-down in each line where you have a higher total value than your opponent.",
+        bottom: "",
+        keywords: {
+            topDeck: true,
+        }
+    },
+    {
         protocol: "Pride",
         value: 0,
         top: "<div><span class='emphasis'>After you compile:</span> Refresh.</div>",
@@ -2032,6 +2104,28 @@ let cards = [
             control: true,
             refresh: true,
             shift: true,
+        }
+    },
+    {
+        protocol: "Sloth",
+        value: 0,
+        top: "Your total value in this line is increased by 5 if this card is covered by a Sloth card.",
+        middle: "Draw cards equal to the number of lines where you have a lower total value than your opponent.",
+        bottom: "",
+        keywords: {
+            draw: true,
+        }
+    },
+    {
+        protocol: "Wrath",
+        value: 1,
+        top: "",
+        middle: "Draw 1 card.",
+        bottom: "<div><span class='emphasis'>End:</span> Lose control. If you did, delete 1 face-up card.</div>",
+        keywords: {
+            control: true,
+            delete: true,
+            draw: true,
         }
     },
     {
