@@ -1978,6 +1978,17 @@ let cards = [
     },
     {
         protocol: "Ambush",
+        value: 0,
+        top: "",
+        middle: "Draw 3 cards. Flip 1 of your face-down cards.",
+        bottom: "",
+        keywords: {
+            draw: true,
+            flip: true,
+        }
+    },
+    {
+        protocol: "Ambush",
         value: 1,
         top: "",
         middle: "Flip all of your other cards with a value of 0 or 1. Draw 1 card for each card flipped.",
@@ -1989,12 +2000,42 @@ let cards = [
     },
     {
         protocol: "Fulcrum",
+        value: 0,
+        top: "<div><span class='emphasis'>Start:</span> If you have exactly 0 cards in hand, your opponent discards 2 cards.</div>",
+        middle: "If you have exactly 0 cards in hand, your opponent discards 1 card.",
+        bottom: "",
+        keywords: {
+            discard: true,
+        }
+    },
+    {
+        protocol: "Fulcrum",
+        value: 1,
+        top: "",
+        middle: "Flip each other face-up card. Swap your left stack with your right stack.",
+        bottom: "",
+        keywords: {
+            flip: true,
+            swap: true,
+        }
+    },
+    {
+        protocol: "Fulcrum",
         value: 2,
         top: "",
         middle: "If you have exactly 2 cards in hand, delete 1 of your opponent's cards.",
         bottom: "",
         keywords: {
             delete: true,
+        }
+    },
+    {
+        protocol: "Envy",
+        value: 0,
+        top: "Your total value in this line is increased by the value of your opponent's highest value card in this line.",
+        middle: "",
+        bottom: "",
+        keywords: {
         }
     },
     {
@@ -2010,12 +2051,47 @@ let cards = [
     },
     {
         protocol: "Gluttony",
+        value: 0,
+        top: "<div><span class='emphasis'>After you clear cache:</span> Play the top card of your deck face-down.</div>",
+        middle: "Return 1 other card. Draw 1 card.",
+        bottom: "",
+        keywords: {
+            draw: true,
+            return: true,
+            topDeck: true,
+        }
+    },
+    {
+        protocol: "Gluttony",
         value: 1,
         top: "",
         middle: "Draw 2 cards.",
         bottom: "<div><span class='emphasis'>After a player clears cache:</span> Delete 1 card.</div>",
         keywords: {
             delete: true,
+            draw: true,
+        }
+    },
+    {
+        protocol: "Gluttony",
+        value: 4,
+        top: "",
+        middle: "",
+        bottom: "<div><span class='emphasis'>After you refresh:</span> Draw 1 card.</div>",
+        keywords: {
+            draw: true,
+            refresh: true,
+        }
+    },
+    {
+        protocol: "Greed",
+        value: 0,
+        top: "",
+        middle: "Discard your hand. Delete 1 card.",
+        bottom: "<div><span class='emphasis'>After you delete cards:</span> Draw 1 card.</div>",
+        keywords: {
+            delete: true,
+            discard: true,
             draw: true,
         }
     },
@@ -2064,6 +2140,38 @@ let cards = [
         }
     },
     {
+        protocol: "Lust",
+        value: 6,
+        top: "",
+        middle: "Discard 1 card. Your opponent plays 1 card face-down in this line.",
+        bottom: "",
+        keywords: {
+            discard: true,
+            play: true,
+        }
+    },
+    {
+        protocol: "Momentum",
+        value: 0,
+        top: "",
+        middle: "Play the top card of your deck face-down in each line with a compiled protocol.",
+        bottom: "",
+        keywords: {
+            compile: true,
+            topDeck: true,
+        }
+    },
+    {
+        protocol: "Momentum",
+        value: 3,
+        top: "",
+        middle: "Draw 2 cards.",
+        bottom: "",
+        keywords: {
+            draw: true,
+        }
+    },
+    {
         protocol: "Momentum",
         value: 4,
         top: "",
@@ -2071,6 +2179,31 @@ let cards = [
         bottom: "",
         keywords: {
             rearrange: true,
+        }
+    },
+    {
+        protocol: "Momentum",
+        value: 6,
+        top: "<div><span class='emphasis'>After a player compiles:</span> Delete this card.</div>",
+        middle: "Discard 1 card.",
+        bottom: "",
+        keywords: {
+            compile: true,
+            delete: true,
+            discard: true,
+        }
+    },
+    {
+        protocol: "Nova",
+        value: 0,
+        top: "<div><span class='emphasis'>Start:</span> Delete all face-up cards in a line where you have exactly 5 cards.</div>",
+        middle: "The player with control swaps the positions of 2 of your protocols.",
+        bottom: "<div><span class='emphasis'>End:</span> Play the top card of your deck face-down under an uncovered Nova card.</div>",
+        keywords: {
+            control: true,
+            delete: true,
+            swap: true,
+            topDeck: true,
         }
     },
     {
@@ -2094,6 +2227,16 @@ let cards = [
         }
     },
     {
+        protocol: "Overwhelm",
+        value: 6,
+        top: "<div><span class='emphasis'>Start:</span> If your opponent has a higher total value in this line than you do, flip this card.</div>",
+        middle: "",
+        bottom: "",
+        keywords: {
+            flip: true,
+        }
+    },
+    {
         protocol: "Pride",
         value: 0,
         top: "<div><span class='emphasis'>After you compile:</span> Refresh.</div>",
@@ -2107,6 +2250,17 @@ let cards = [
         }
     },
     {
+        protocol: "Pride",
+        value: 6,
+        top: "<div><span class='emphasis'>After your opponent gains control:</span> Flip this card.</div>",
+        middle: "If your opponent has control, flip this card.",
+        bottom: "",
+        keywords: {
+            control: true,
+            flip: true,
+        }
+    },
+    {
         protocol: "Sloth",
         value: 0,
         top: "Your total value in this line is increased by 5 if this card is covered by a Sloth card.",
@@ -2114,6 +2268,16 @@ let cards = [
         bottom: "",
         keywords: {
             draw: true,
+        }
+    },
+    {
+        protocol: "Wrath",
+        value: 0,
+        top: "All cards with the highest value in this line do not add to a player's total value in this line.",
+        middle: "Play the top card of your deck face-down in this stack.",
+        bottom: "",
+        keywords: {
+            topDeck: true,
         }
     },
     {
@@ -2130,6 +2294,17 @@ let cards = [
     },
     {
         protocol: "Flexible",
+        value: 0,
+        top: "",
+        middle: "Return or shift 1 card.",
+        bottom: "",
+        keywords: {
+            return: true,
+            shift: true,
+        }
+    },
+    {
+        protocol: "Flexible",
         value: 3,
         top: "",
         middle: "Shift 1 of your opponent's cards or swap 2 of your protocols.",
@@ -2137,6 +2312,41 @@ let cards = [
         keywords: {
             shift: true,
             swap: true,
+        }
+    },
+    {
+        protocol: "Inert",
+        value: 0,
+        top: "All other cards in this line have no top commands.",
+        middle: "Flip 1 covered or uncovered face-up card in a different line.",
+        bottom: "",
+        keywords: {
+            flip: true,
+        }
+    },
+    {
+        protocol: "Rigid",
+        value: 1,
+        top: "",
+        middle: "Flip 1 of your opponent's face-up cards.",
+        bottom: "<div><span class='emphasis'>End:</span> Play 1 card face-down in each other line where your opponent's uncovered card is face-down.</div>",
+        keywords: {
+            flip: true,
+            play: true,
+        }
+    },
+    {
+        protocol: "Rigid",
+        value: 7,
+        top: "<div><span class='emphasis'>End:</span> Your opponent chooses to draw 1 card or play 1 card.</div>",
+        middle: "Discard 1 card.",
+        bottom: "This card cannot be flipped or shifted.",
+        keywords: {
+            discard: true,
+            draw: true,
+            flip: true,
+            play: true,
+            shift: true,
         }
     },
 ]
